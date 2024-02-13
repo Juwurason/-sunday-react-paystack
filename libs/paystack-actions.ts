@@ -15,7 +15,7 @@ type CustomWindow = {
 const custom: CustomWindow = null!;
 export let callPaystackPop = (paystackArgs: Record<string, any>): void => {
 
-  const handler = custom.PaystackPop 
+  const handler = custom.PaystackPop && custom.PaystackPop?.setup(paystackArgs);
   handler && handler.openIframe();
  
 };
