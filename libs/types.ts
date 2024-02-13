@@ -14,23 +14,55 @@ type Bearer = 'account' | 'subaccount';
 
 type phone = number | string;
 
-interface PaystackCustomFields {
+// interface PaystackCustomFields {
+  // display_name: string;
+  // variable_name: string;
+  // value: any;
+// }
+
+type PaystackCustomFields = {
   display_name: string;
   variable_name: string;
-  value: any;
+  value: unknown;
 }
 
-interface PaystackMetadata {
+// interface PaystackMetadata {
+//   custom_fields: PaystackCustomFields[];
+// }
+
+// interface PaystackMetadata {
+//   [key: string]: unknown;
+// }
+type PaystackMetadata = {
   custom_fields: PaystackCustomFields[];
+} & {
+  [key: string]: unknown;
 }
 
-interface PaystackMetadata {
-  [key: string]: any;
-}
+export type callback = (response?: unknown) => void;
 
-export type callback = (response?: any) => void;
-
-export interface PaystackProps {
+// export interface PaystackProps {
+//   publicKey: string;
+//   email: string;
+//   amount: number;
+//   firstname?: string;
+//   lastname?: string;
+//   phone?: phone;
+//   reference?: string;
+//   metadata?: PaystackMetadata;
+//   currency?: Currency | string;
+//   channels?: PaymentChannels[] | string[];
+//   label?: string;
+//   plan?: string;
+//   quantity?: number;
+//   subaccount?: string;
+//   transaction_charge?: number;
+//   bearer?: Bearer;
+//   'data-custom-button'?: string;
+//   split_code?: string;
+//   split?: Record<string, any>;
+// }
+export type PaystackProps = {
   publicKey: string;
   email: string;
   amount: number;

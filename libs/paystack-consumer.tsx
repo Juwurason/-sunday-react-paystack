@@ -3,11 +3,18 @@ import PaystackProvider from './paystack-provider';
 import {PaystackProps} from './types';
 import PaystackContext from './paystack-context';
 
-interface PaystackConsumerProps extends PaystackProps {
+// interface PaystackConsumerProps extends PaystackProps {
+//   children: (arg: Record<string, any>) => any;
+//   onSuccess?: () => void;
+//   onClose?: () => void;
+// }
+
+
+type PaystackConsumerProps = {
   children: (arg: Record<string, any>) => any;
   onSuccess?: () => void;
   onClose?: () => void;
-}
+} & PaystackProps
 
 const PaystackConsumerChild = ({
   children,

@@ -1,6 +1,14 @@
 import { ReactNode } from 'react';
 import { callback, PaystackProps } from './types';
-interface PaystackButtonProps extends PaystackProps {
+// interface PaystackButtonProps extends PaystackProps {
+//     text?: string;
+//     className?: string;
+//     children?: ReactNode;
+//     onSuccess?: callback;
+//     onClose?: callback;
+// }
+
+type PaystackButtonProps = {
     text?: string;
     className?: string;
     children?: ReactNode;

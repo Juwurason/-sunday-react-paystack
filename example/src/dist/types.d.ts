@@ -2,18 +2,29 @@ type Currency = 'NGN' | 'GHS' | 'USD' | 'ZAR' | 'KES' | 'XOF';
 type PaymentChannels = 'bank' | 'card' | 'qr' | 'ussd' | 'mobile_money' | 'eft' | 'bank_transfer' | 'payattitude';
 type Bearer = 'account' | 'subaccount';
 type phone = number | string;
-interface PaystackCustomFields {
+// interface PaystackCustomFields {
+    // display_name: string;
+    // variable_name: string;
+    // value: unknown;
+// }
+type PaystackCustomFields = {
     display_name: string;
     variable_name: string;
-    value: any;
+    value: unknown;
 }
-interface PaystackMetadata {
+// interface PaystackMetadata {
+//     custom_fields: PaystackCustomFields[];
+// }
+// interface PaystackMetadata {
+//     [key: string]: unknown;
+// }
+type PaystackMetadata = {
     custom_fields: PaystackCustomFields[];
+} & {
+    [key: string]: unknown;
 }
-interface PaystackMetadata {
-    [key: string]: any;
-}
-export type callback = (response?: any) => void;
+
+export type callback = (response?: unknown) => void;
 export interface PaystackProps {
     publicKey: string;
     email: string;
@@ -33,7 +44,7 @@ export interface PaystackProps {
     bearer?: Bearer;
     'data-custom-button'?: string;
     split_code?: string;
-    split?: Record<string, any>;
+    split?: Record<string, unknown>;
 }
 export type InitializePayment = (options: {
     onSuccess?: callback;

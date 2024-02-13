@@ -1,11 +1,14 @@
 import {useState, useEffect} from 'react';
 
 const cachedScripts: string[] = [];
-interface IScriptResult {
+// interface IScriptResult {
+  // loaded: boolean;
+  // error: boolean;
+// }
+type IScriptResult = {
   loaded: boolean;
   error: boolean;
 }
-
 export default function usePaystackScript(): boolean[] {
   const src = 'https://js.paystack.co/v1/inline.js';
 
